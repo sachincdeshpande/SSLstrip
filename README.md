@@ -2,7 +2,8 @@
 An implementation of the SSLstrip library to strip SSL/TLS encryption to perform a Man in the Middle attack.
 
 The library is available here: https://github.com/moxie0/sslstrip
-There are 4 scripts that need to be run, script[0-3].sh
+There are 4 scripts that need to be run, script[0-3].sh, in different terminals.
+
 Requires the following dependencies:
   - iptables: needed to set up forwarding tables to route DNS/TCP/ARP messages.
   - dns2proxy: needed to spoof thh victim's DNS requests.
