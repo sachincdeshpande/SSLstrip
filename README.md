@@ -1,9 +1,14 @@
 # SSLstrip
-An implementation of the SSLstrip library to strip SSL/TLS encryption to perform a Man in the Middle attack.
+An implementation of the SSLstrip library to strip SSL/TLS encryption to perform a Man in the Middle (MitM) attack.
 
 The library is available here: https://github.com/moxie0/sslstrip
 
-There are 4 scripts that need to be run, script[0-3].sh, in different terminals.
+There are 4 scripts that need to be run, in different terminals or as background processes:
+  - forward_table.sh: sets up a forwarding table to send packets. Uses nmap to determine what ports you can listen to
+  - sslstrip.sh: starts the library
+  - victim_forwarder.sh: sends arp signals to the victim so it believes the MitM device is the router
+  - router_forwarder.sh: sends arp signals to the router so it believes the MitM device is the victim
+
 
 The following dependencies are required:
   - iptables: needed to set up forwarding tables to route DNS/TCP/ARP messages.
